@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/commen_title" />
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:divider="@drawable/line"
+            app:dividerPadding="30dp"
+            app:showDividers="middle">
+
+            <RelativeLayout
+                style="@style/mine_lin_style"
+                android:layout_width="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/logo" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/iv_head"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_head"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textColor="?md_title_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_toRightOf="@id/iv_head"
+                    android:maxLines="5"
+                    android:text="@string/about_title"
+                    android:textColor="?md_title_color" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_welfare"
+                style="@style/mine_lin_style"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_welfare" />
+
+                <TextView
+                    android:id="@+id/tv_welfare"
+                    style="@style/mine_tv_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv1"
+                    android:gravity="center"
+                    android:text="@string/my_welfare" />
+
+                <ImageView
+                    style="@style/both_wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_record"
+                style="@style/mine_lin_style"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_history" />
+
+                <TextView
+                    android:id="@+id/tv_history"
+                    style="@style/mine_tv_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv2"
+                    android:gravity="center"
+                    android:text="@string/my_record" />
+
+                <ImageView
+                    style="@style/both_wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/right" />
+            </RelativeLayout>
+
+
+            <com.jude.easyrecyclerview.EasyRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/large_text_size"
+                android:layout_marginRight="@dimen/large_text_size"
+                android:visibility="gone"
+                app:scrollbars="none" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_collection"
+                style="@style/mine_lin_style"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_avort" />
+
+                <TextView
+                    android:id="@+id/tv_collection"
+                    style="@style/mine_tv_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv4"
+                    android:gravity="center"
+                    android:text="@string/my_collection" />
+
+                <ImageView
+                    style="@style/both_wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/right" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_them"
+                style="@style/mine_lin_style"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv5"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_theme" />
+
+                <TextView
+                    android:id="@+id/tv_them"
+                    style="@style/mine_tv_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv5"
+                    android:gravity="center"
+                    android:text="@string/my_them" />
+
+                <ImageView
+                    style="@style/both_wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_setting"
+                style="@style/mine_lin_style"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv6"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_setting" />
+
+                <TextView
+                    android:id="@+id/tv_setting"
+                    style="@style/mine_tv_style"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv6"
+                    android:gravity="center"
+                    android:text="@string/my_setting" />
+
+                <ImageView
+                    style="@style/both_wrap_style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/right" />
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>

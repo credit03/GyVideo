@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/commen_title" />
+
+    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+        android:id="@+id/video_paly"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/white_translucent_20" />
+
+    <com.guoyi.gyvideo.widget.theme.ColorLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/title_tv_style"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white_translucent_20"
+            android:text="简介" />
+
+        <com.jude.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/recylerView"
+            android:clipChildren="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            app:layout_empty="@layout/view_empty"
+            app:layout_progress="@layout/view_progress" />
+
+    </com.guoyi.gyvideo.widget.theme.ColorLinearLayout>
+
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>

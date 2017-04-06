@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background"
+    android:orientation="vertical"
+    tools:context="com.guoyi.gyvideo.ui.activity.VideoSearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/colorPrimary"
+        android:paddingTop="30dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10sp"
+                android:src="@mipmap/back" />
+
+            <Button
+                android:id="@+id/btn_search"
+                style="@style/common_tv_style"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:gravity="center"
+                android:text="@string/search_tv" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/micro_text_size"
+                android:layout_marginRight="@dimen/micro_text_size"
+                android:layout_toLeftOf="@id/btn_search"
+                android:layout_toRightOf="@id/back"
+                android:background="@drawable/search_edt_back"
+                android:drawableLeft="@mipmap/search"
+                android:hint="@string/search_tip"
+                android:paddingLeft="@dimen/micro_text_size"
+                android:paddingRight="@dimen/micro_text_size"
+                android:textColor="?attr/md_title_color"
+                android:textColorHint="?attr/md_title_color"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/search_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/micro_text_size">
+
+        <RelativeLayout
+            android:id="@+id/rl_search_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_search_history"
+                style="@style/common_tv_style"
+                android:text="@string/search_history" />
+
+            <ImageView
+                android:id="@+id/img_search_clear"
+                style="@style/both_wrap_style"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/search_clear" />
+
+            <me.gujun.android.taggroup.TagGroup
+                android:id="@+id/tag_group_beauty_inverse"
+                style="@style/TagGroup.Beauty_Red.Inverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_search_history"
+                android:padding="2dp" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_search_recommend"
+            style="@style/common_tv_style"
+            android:layout_marginTop="5dp"
+            android:text="@string/search_recommend" />
+
+        <LinearLayout
+            android:id="@+id/recommend_video"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/recommend_1"
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@mipmap/default_320" />
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="qwerty"
+                    android:textColor="?md_title_color" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/recommend_2"
+                android:layout_width="0.0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@mipmap/default_320" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="qwerty"
+                    android:textColor="?md_title_color" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:scrollbars="none"
+        app:layout_empty="@layout/view_empty"
+        app:layout_progress="@layout/view_progress" />
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>

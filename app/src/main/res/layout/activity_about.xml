@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/commen_title" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:text="当前项目"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="当前项目" />
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>

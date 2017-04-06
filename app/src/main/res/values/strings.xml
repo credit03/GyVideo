@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Cre视频</string>
+    <string name="author">Credit</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="recommend">推荐</string>
+    <string name="recommend_title">精选</string>
+    <string name="top_title">专题</string>
+    <string name="clean">清除</string>
+    <string name="shrink">收起</string>
+    <string name="expand">展开</string>
+    <string name="found">发现</string>
+    <string name="search_tip">查找你喜欢的电影</string>
+    <string name="search_tv">查找</string>
+    <string name="search_history">搜索记录</string>
+    <string name="search_recommend">热门推荐</string>
+    <string name="done">完成</string>
+    <string name="cancel">取消</string>
+    <string name="theme">主题</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="about_title">这是一个专门播放电影与电视的APP,仅作学习使用;如有侵权等，请联系我删除,谢谢！！！。</string>
+    <string name="about_desc">使用RxJava2+Retrofit2+Rxbus2+MVP+Glide等热门技术整合开发\n
+        使用Realm管理数据库，使用Acache替代SP等等
+        bug反馈:creidt_yi@163.com \n
+        QQ：874951370\n
+        Github项目链接 </string>
+    <string name="my_record">历史</string>
+    <string name="my_down">缓存</string>
+    <string name="my_collection">收藏</string>
+    <string name="my_them">主题</string>
+    <string name="my_welfare">福利</string>
+    <string name="my_setting">设置</string>
+    <string name="mine">我的</string>
+    <string name="search_tv_tip">搜索电视节目</string>
+    <string name="about">关于我们</string>
+</resources>

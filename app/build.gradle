@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'  // java8 语法支持
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.guoyi.gyvideo"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:cardview-v7:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:support-vector-drawable:25.2.0'
+    //圆形image
+    compile 'com.makeramen:roundedimageview:2.2.1'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //如果你的网络请求底层使用了Okhttp的话，那么可以指定这个让Glide网络层使用Okhttp
+    compile('com.github.bumptech.glide:okhttp3-integration:1.4.0') {
+        exclude group: 'glide-parent'
+    }
+    //Rxjava for android
+    compile 'io.reactivex.rxjava2:rxjava:2.0.6'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //retrofit
+    compile 'com.github.akarnokd:rxjava2-extensions:0.15.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    //retrofit  转换器
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    //okhttp3
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //gson
+    compile 'com.google.code.gson:gson:2.8.0'
+    //自动注解 butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    /*  //Android developers should collect the following utils
+        compile 'com.blankj:utilcode:1.3.6'*/
+
+    //material 的dialogs 窗口
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.4@aar') {
+        transitive = true
+    }
+    compile('com.github.afollestad.material-dialogs:commons:0.8.5.4@aar') {
+        transitive = true
+    }
+
+    //log输出
+    compile 'com.orhanobut:logger:1.15'
+    //easyrecyclerview
+    compile 'com.jude:easyrecyclerview:4.0.6'
+    //节操视频，不知道为什么用5.5.2播放黑屏，播放电视没问题，播放电影有问题
+    //compile 'fm.jiecao:jiecaovideoplayer:4.7.1_preview'
+     compile 'fm.jiecao:jiecaovideoplayer:5.5.2'
+    //左右拖拽海报
+    compile 'com.daprlabs.aaron:cardstack:0.3.1-beta0'
+    //标签
+    compile 'me.gujun.android.taggroup:library:1.4@aar'
+    //PhotoView
+    compile 'com.github.chrisbanes:PhotoView:1.3.1'
+
+
+}

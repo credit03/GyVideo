@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.mvp.view.RecommendView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recommend"
+    style="@style/both_match_style">
+
+</com.guoyi.gyvideo.mvp.view.RecommendView>

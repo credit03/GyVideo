@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?background"
+    android:orientation="vertical"
+    tools:context="com.guoyi.gyvideo.ui.activity.SettingActivity">
+
+    <include layout="@layout/commen_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_cache"
+        style="@style/mine_lin_style"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white_translucent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_cache"
+            style="@style/mine_tv_style"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="清除缓存" />
+
+
+        <TextView
+            android:id="@+id/tv_cache_count"
+            style="@style/small_tv_style"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="1234" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_about"
+        style="@style/mine_lin_style"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white_translucent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_about"
+            style="@style/mine_tv_style"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="关于我们" />
+
+        <ImageView
+            style="@style/both_wrap_style"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/right" />
+    </RelativeLayout>
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.guoyi.gyvideo.widget.theme.ColorLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background"
+    android:orientation="vertical"
+    tools:context="com.guoyi.gyvideo.ui.activity.TvListActivity">
+
+    <include layout="@layout/commen_title" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_search"
+            style="@style/common_tv_style"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:gravity="center"
+            android:text="清除"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/micro_text_size"
+            android:layout_marginRight="@dimen/micro_text_size"
+            android:layout_toLeftOf="@id/btn_search"
+            android:background="@drawable/search_edt_back"
+            android:drawableLeft="@mipmap/search"
+            android:hint="@string/search_tv_tip"
+            android:paddingLeft="@dimen/micro_text_size"
+            android:paddingRight="@dimen/micro_text_size"
+            android:textColor="?attr/md_title_color"
+            android:textColorHint="?attr/md_title_color"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" />
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/resultRecyler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:visibility="gone"
+        app:layout_empty="@layout/view_empty"
+        app:layout_progress="@layout/view_progress" />
+
+</com.guoyi.gyvideo.widget.theme.ColorLinearLayout>
