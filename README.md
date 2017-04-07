@@ -8,3 +8,7 @@ https://github.com/GeekGhost/Ghost
  ![image](https://github.com/credit03/GyVideo/blob/master/gif/vi.gif)
  
  
+ 
+由于fm.jiecao:jiecaovideoplayer:5.5.2 底层修改使用android提供的媒体播放器，5.5.2 对rtsp视频不兼容，播放电影有问题
+而fm.jiecao:jiecaovideoplayer:4.7.1_preview  基于ijkplayer, 支持hls,rtsp
+但不支持上一次播放位置记录，也不支持调节亮度，所以修改4.7.1_preview，添加位置记录，调节亮度功能
