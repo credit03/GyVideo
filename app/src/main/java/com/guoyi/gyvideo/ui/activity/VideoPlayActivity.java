@@ -104,8 +104,6 @@ public class VideoPlayActivity extends BaseActivity {
     private TextViewExpandableAnimation expandableAnimation;
 
     private OfflineACache aCache;
-    JCVideoPlayer.JCAutoFullscreenListener sensorEventListener;
-    SensorManager sensorManager;
 
     @OnClick({R.id.rl_back, R.id.iv_collect})
     public void onClick(View v) {
@@ -121,8 +119,10 @@ public class VideoPlayActivity extends BaseActivity {
         }
     }
 
-    public void initValue() {
+    JCVideoPlayer.JCAutoFullscreenListener sensorEventListener;
+    SensorManager sensorManager;
 
+    public void initValue() {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensorEventListener = new JCVideoPlayer.JCAutoFullscreenListener();
 
@@ -229,9 +229,12 @@ public class VideoPlayActivity extends BaseActivity {
      */
     public void palyTvData() {
         /**
-         * 播放电视一定要清除进度，不然下次进度同样的频道则无法播放
+         * 播放电视不保存进度
+         *  也可以使用： JCVideoPlayer.clearSavedProgress(this,TvUrl);
          */
-        JCVideoPlayer.clearSavedProgress(this, TvUrl);
+        JCVideoPlayer.SAVE_PROGRESS = false;
+        //
+
         titleName.setText(TvTitle);
         videoPaly.setUp(TvUrl
                 , JCVideoPlayerStandard.SCREEN_LAYOUT_LIST, TvTitle);
@@ -262,16 +265,15 @@ public class VideoPlayActivity extends BaseActivity {
      * @param isLocal
      */
     public void setData(VideoRes data, boolean isLocal) {
-
+        /**
+         * 播放电影保存进度
+         */
+        JCVideoPlayer.SAVE_PROGRESS = true;
         titleName.setText(data.title);
         if (!TextUtils.isEmpty(data.pic))
             Glide.with(this).load(data.pic).into(videoPaly.thumbImageView);
         if (!TextUtils.isEmpty(data.getVideoUrl())) {
             videoPaly.setUp(data.getVideoUrl(), JCVideoPlayerStandard.SCREEN_LAYOUT_NORMAL, data.title);
-            videoPaly.onClick(videoPaly.thumbImageView);
-            videoPaly.getCurrentPositionWhenPlaying();
-
-
         }
         logD("视频URL：" + data.getVideoUrl());
         if (!isLocal) {
@@ -404,13 +406,6 @@ public class VideoPlayActivity extends BaseActivity {
 
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Sensor accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(sensorEventListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-    @Override
     protected void onStart() {
         super.onStart();
         if (videoRes != null) {
@@ -432,6 +427,13 @@ public class VideoPlayActivity extends BaseActivity {
             }
 
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Sensor accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(sensorEventListener, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override

@@ -69,10 +69,8 @@ dependencies {
     //自动注解 butterknife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
     /*  //Android developers should collect the following utils
-        compile 'com.blankj:utilcode:1.3.6'*/
-
+            compile 'com.blankj:utilcode:1.3.6'*/
     //material 的dialogs 窗口
     compile('com.github.afollestad.material-dialogs:core:0.8.5.4@aar') {
         transitive = true
@@ -80,20 +78,24 @@ dependencies {
     compile('com.github.afollestad.material-dialogs:commons:0.8.5.4@aar') {
         transitive = true
     }
-
     //log输出
     compile 'com.orhanobut:logger:1.15'
     //easyrecyclerview
     compile 'com.jude:easyrecyclerview:4.0.6'
     //节操视频，不知道为什么用5.5.2播放黑屏，播放电视没问题，播放电影有问题
     //compile 'fm.jiecao:jiecaovideoplayer:4.7.1_preview'
-     compile 'fm.jiecao:jiecaovideoplayer:5.5.2'
+    // compile 'fm.jiecao:jiecaovideoplayer:5.5.2'
+/**
+ * 由于fm.jiecao:jiecaovideoplayer:5.5.2 底层修改使用android提供的媒体播放器，5.5.2 对rtsp视频不兼容，播放电影有问题
+ * 而fm.jiecao:jiecaovideoplayer:4.7.1_preview  基于ijkplayer, 支持hls,rtsp
+ * 但不支持上一次播放位置记录，也不支持调节亮度，所以修改4.7.1_preview，添加位置记录，调节亮度功能
+ */
+    compile project(':jcvideoplayer-4.7.1')
     //左右拖拽海报
     compile 'com.daprlabs.aaron:cardstack:0.3.1-beta0'
     //标签
     compile 'me.gujun.android.taggroup:library:1.4@aar'
     //PhotoView
     compile 'com.github.chrisbanes:PhotoView:1.3.1'
-
 
 }
